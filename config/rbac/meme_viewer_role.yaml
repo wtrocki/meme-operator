@@ -1,0 +1,20 @@
+# permissions for end users to view memes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: meme-viewer-role
+rules:
+- apiGroups:
+  - cache.meme.com
+  resources:
+  - memes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cache.meme.com
+  resources:
+  - memes/status
+  verbs:
+  - get
